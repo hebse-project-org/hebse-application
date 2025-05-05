@@ -1,0 +1,47 @@
+name: Verify Main
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend:
+    name: Backend Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install tox and run tests
+        run: |
+          pip install tox
+          cd backend
+          tox
+
+  eslint:
+    name: ESLint
+    runs-on: ubuntu-latest
+    container: node:latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies and run ESLint
+        run: |
+          cd frontend
+          npm install
+          npx eslint . --fix
+
+  frontend-unit-test:
+    name: Frontend Unit Tests with Coverage
+    runs-on: ubuntu-latest
+    container: node:latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies and run tests
+        run: |
+          cd frontend
+          npm install
+          npx vitest run --coverage
