@@ -1,0 +1,4 @@
+pandas
+h5py
+sqlalchemy
+sqlalchemy_utils

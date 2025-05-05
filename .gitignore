@@ -1,0 +1,4 @@
+**docs
+/backend/.coverage
+frontend/coverage
+/frontend/src/tunnel/Secure_Storage_key.bin

@@ -1,0 +1,16 @@
+fastapi[standard]
+uvicorn
+pandas
+h5py
+sqlalchemy==2.0.38
+psycopg2-binary
+sshtunnel
+tox
+pytest
+pytest-cov
+pytest-pylint
+httpx
+openai
+httpx
+scp
+mock
