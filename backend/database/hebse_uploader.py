@@ -11,6 +11,25 @@ from sqlalchemy import create_engine, exc, text
 import sqlalchemy_utils
 
 
+# --------------------------------------------------------------------------
+# HOW TO RUN:
+#   python hebse_uploader.py <userDirectory> <datasetFileName> <database> \
+#   <databaseUsername> <databasePassword> <databaseHost> <databasePort>
+#
+# DEFAULTS:
+#   userDirectory      = Must be included
+#   datasetFileName    = Must be included
+#   database           = 'hebse'
+#   databaseUsername   = 'postgres'
+#   databasePassword   = 'root'
+#   databaseHost       = 'localhost'
+#   databasePort       = '5432'
+#
+# NOTE:
+#   You can also set these values in the Hebse application UI by saving
+#   your configuration before you trigger the build/upload process.
+
+
 def fill_missing_values(data):
     if data.isna().any().any():
         data.interpolate(method='linear', axis=0, inplace=True, limit_direction='both')
@@ -122,11 +141,11 @@ def create_database(engine, h5_files):
 
 def get_engine():
     # PostgreSQL credentials
-    username = 'postgres'
-    password = 'root'
-    host = 'localhost'
-    port = '5432'
-    database = sys.argv[3]
+    database = sys.argv[3] if len(sys.argv) > 3 else 'hebse'
+    username = sys.argv[4] if len(sys.argv) > 4 else 'postgres'
+    password = sys.argv[5] if len(sys.argv) > 5 else 'root'
+    host     = sys.argv[6] if len(sys.argv) > 6 else 'localhost'
+    port     = sys.argv[7] if len(sys.argv) > 7 else '5432'
 
     # Connect to PostgreSQL
     engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}')
