@@ -21,5 +21,6 @@ Write-Host "Starting frontend server..."
 Start-Process powershell.exe -ArgumentList '-NoExit', '-Command', "Set-Location '$frontendDir'; npm run prod:frontend"
 
 # 3. Open the GUI in the Default Browser
+Start-Sleep 3
 Write-Host "Opening the default browser on http://localhost:5173"
 Start-Process "http://localhost:5173"
