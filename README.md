@@ -23,7 +23,7 @@ To access the documentation and learn more about the passionate team behind this
 
 ---
 
-> Background image for the aplication is from Phil Brewer on [Astrobin](https://app.astrobin.com/i/jfo1on)
+> Background image for the application is from Phil Brewer on [Astrobin](https://app.astrobin.com/i/jfo1on)
 
 
 ## How to Run
