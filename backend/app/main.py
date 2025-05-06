@@ -308,7 +308,7 @@ def setup_database(body: dict):  # pragma: no cover
         sterr.read()
 
         print("Creating database...")
-        stdin, stdout, sterr = ssh_client.exec_command(f"python3 database/hebse_uploader.py {local_file_name} \"{db_settings['sshUser']}\" \"{db_settings['databaseName']}\" \"{db_settings['databaseUsername']}\" \"{db_settings['databasePassword']}\" \"{db_settings['databasehost']}\" \"{db_settings['databasePort']}\"  ", get_pty=True)  # pylint: disable=unused-variable
+        stdin, stdout, sterr = ssh_client.exec_command(f"python3 database/hebse_uploader.py {local_file_name} \"{db_settings['sshUser']}\" \"{db_settings['databaseName']}\" \"{db_settings['databaseUsername']}\" \"{db_settings['databasePassword']}\" \"{db_settings['databaseHost']}\" \"{db_settings['databasePort']}\"  ", get_pty=True)  # pylint: disable=unused-variable
         sterr.read()
 
         print("Cleaning up...")
