@@ -30,11 +30,12 @@ To access the documentation and learn more about the passionate team behind this
 
 1. Clone the HEBSE repository to your local machine.
 2. Install PostgreSQL on the device where you want to store the data.
-3. Run the PowerShell script `HEBSE.ps1`.
-4. Connect HEBSE to the database using the **Settings** page.
-5. Initialize the dataset in the database using the **Utilities** page in HEBSE.
-6. Make your first query!
-7. For more information, refer to the user manual, which is available within the application or at the bottom of this README.
+3. Install Python (3.11 or newer) and Node (22.14 or newer)
+4. Run the PowerShell script `HEBSE.ps1`.
+5. Connect HEBSE to the database using the **Settings** page.
+6. Initialize the dataset in the database using the **Utilities** page in HEBSE.
+7. Make your first query!
+8. For more information, refer to the user manual, which is available within the application or at the bottom of this README.
 
 ---
 
